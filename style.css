@@ -1,0 +1,220 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.headerbox {
+  position: fixed;
+  width: 100%;
+}
+header {
+  max-width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  position: relative;
+}
+header::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 1px;
+  background: #ccc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+}
+header:hover::after {
+  width: 95%;
+}
+
+.nav_list {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.nav_list .depth1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+.nav_list .depth1 .depth1_list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav_list .depth1 .depth1_list::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: red;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  transition: 0.5s;
+  z-index: 1;
+}
+.nav_list .depth1 .depth1_list:hover::after {
+  width: 100%;
+}
+
+.nav_list .depth1 .depth1_list > a {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 60px;
+  text-transform: uppercase;
+}
+.nav_list .depth1 .depth1_list .depth2 {
+  position: absolute;
+  width: 250px;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: 1s;
+  top: 100px;
+  text-align: center;
+}
+.nav_list .depth1 .depth1_list .depth2 a {
+  color: #000;
+}
+.nav_list .depth1:hover .depth1_list .depth2 {
+  height: 200px;
+  opacity: 1;
+}
+
+.nav_list .depth1 .depth1_list .depth2 .depth2_list {
+  padding-top: 20px;
+}
+.nav_bg {
+  width: 95%;
+  height: 0%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  z-index: -999;
+}
+.nav_list:hover + .nav_bg {
+  height: 400px;
+}
+.icon {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: red;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.container::after {
+  content: "";
+  height: 100%;
+  width: 5%;
+  background: #000;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  z-index: -999;
+}
+.contetn1,
+.contetn2 {
+  height: 50%;
+  width: 95%;
+}
+.contetn1 {
+  display: flex;
+  align-items: flex-end;
+}
+.textbox {
+  width: 650px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+}
+.textbox p:first-child {
+  font-size: 50px;
+  font-weight: 800;
+}
+.textbox p:nth-child(2),
+.textbox p:last-child {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.contetn2 {
+  background-image: url(./images/banner1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.btnbox {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: -100px;
+}
+.btnbox button:nth-child(2) {
+  border-right: 0.3px solid #ccc;
+  border-left: 0.3px solid #ccc;
+}
+.btnbox button {
+  background: #000;
+  border: none;
+  color: #fff;
+  width: 250px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+}
+.btnbox button span {
+  position: relative;
+  z-index: 1;
+  font-size: 28px;
+}
+.btnbox button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  background-color: red;
+  top: 0;
+  left: 0;
+  transition: 1s;
+}
+.btnbox button:hover::before {
+  width: 100%;
+}
+
+.textbox2 {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  top: calc(50% - 200px / 2);
+  right: calc(250px * 3 - 350px);
+}
+.textbox2 p:first-child {
+  font-size: 45px;
+  font-weight: 800;
+}
+.textbox2 p:nth-child(2) {
+  font-size: 24px;
+  color: red;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.textbox2 p:last-child {
+  font-size: 18px;
+}
